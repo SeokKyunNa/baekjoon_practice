@@ -12,16 +12,18 @@ public class Q010951 {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
+		StringTokenizer st;
+		String tmp;
 		int a, b;
 		
-		while(br.readLine() != null) {
-			StringTokenizer st = new StringTokenizer(br.readLine());
+		while((tmp = br.readLine()) != null) {
+			st = new StringTokenizer(tmp, " ");
 			
 			a = Integer.parseInt(st.nextToken());
 			b = Integer.parseInt(st.nextToken());
-			
+			System.out.println(a+b);
 			sb.append(a+b).append("\n");
-		}
+		} 
 		
 		System.out.println(sb);
 	}
