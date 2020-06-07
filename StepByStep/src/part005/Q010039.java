@@ -1,0 +1,22 @@
+package part005;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+/* Æò±Õ Á¡¼ö */
+public class Q010039 {
+
+	public static void main(String[] args) throws IOException {
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int score, sum = 0;
+		for(int i = 0; i < 5; i++) {
+			score = Integer.parseInt(br.readLine());
+			if(score < 40) score = 40;
+			sum += score;
+		}
+		System.out.println(sum/5);
+	}
+
+}
