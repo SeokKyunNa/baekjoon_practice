@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/* 숫자의 개수 */
 public class Q002577 {
 
 	public static void main(String[] args) throws IOException {
@@ -11,13 +12,21 @@ public class Q002577 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int[] num = new int[10];
 		int mul = 1;
+		int temp;
 		
 		for(int i = 0; i < 3; i++) {
 			mul *= Integer.parseInt(br.readLine());
 		}
 		
-		// 한 자리 씩 잘라서 무슨 숫자인지 확인하고 num[n] 배열에 담기
-		for(int n:)
+		while(mul > 0) {
+			temp = mul % 10;
+			mul = mul / 10;
+			num[temp]++;
+		}
+		
+		for(int c : num) {
+			System.out.println(c);
+		}
 	}
 
 }
