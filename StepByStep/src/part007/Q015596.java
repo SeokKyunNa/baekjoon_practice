@@ -1,5 +1,6 @@
 package part007;
 
+/* 정수 N개의 합 */
 public class Q015596 {
 
 	public static void main(String[] args) {
