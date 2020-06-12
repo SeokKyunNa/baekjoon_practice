@@ -10,16 +10,36 @@ public class Q001065 {
 	public static void main(String[] args) throws IOException {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int count = 99;
+		
 		int n = Integer.parseInt(br.readLine());
 		
-		for(int i = 0; i < n; i++) {
-			while(n > 0) {
-				int a = 0, b = 0, temp = 0;
-				temp = n % 10;
-				n = n / 10;
+		if(n < 100) {
+			count = n;
+		} else {
+			for(int i = 100; i <= n; i++) {
+				int t = 0, temp = i;
+				int[] term = new int[4];
+				
+				while(temp > 0) {
+					term[t] = temp % 10;
+					temp = temp / 10;
+					t++;
+				}
+				
+				if(i < 1000) {
+					if(term[2]-term[1] == term[1]-term[0]) {
+						count++;
+					}
+				} else {
+					if(term[3]-term[2] == term[2]-term[1] && term[2]-term[1] == term[1]-term[0]) {
+						count++;
+					}
+				}
 			}
-			
-		}
+		} 
+		
+		System.out.println(count);
 		
 	}
 
