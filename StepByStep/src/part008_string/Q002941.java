@@ -14,28 +14,38 @@ public class Q002941 {
 		int count = 0;
 		
 		for(int i = 0; i < calphabet.length; i++) {
+			System.out.println(i);
 			count++;
-			if(calphabet[i]=='c') {
-				if(i+1<calphabet.length && (calphabet[i+1]=='=' || calphabet[i+1]=='-')) {
-					i++;
-				}
-			} else if(calphabet[i]=='d') {
-				if(i+2<calphabet.length && calphabet[i+1]=='z' && calphabet[i+2]=='=') {
-					i+=2;
-				} else if(i+1<=calphabet.length && calphabet[i+1]=='-') {
-					i++;
-				}
-			} else if(calphabet[i]=='l') {
-				if(i+1<calphabet.length && calphabet[i+1]=='j') {
-					i++;
-				}
-			} else if(calphabet[i]=='n') {
-				if(i+1<calphabet.length && calphabet[i+1]=='j') {
-					i++;
-				}
-			} else if(calphabet[i]=='s' || calphabet[i]=='z') {
-				if(i+1<calphabet.length && calphabet[i+1]=='=') {
-					i++;
+			
+			if(i+1<calphabet.length) {
+				if(calphabet[i]=='c') {
+					if(calphabet[i+1]=='=' || calphabet[i+1]=='-') {
+						System.out.println("c=c-");
+						i++;
+					}
+				} else if(calphabet[i]=='d') {
+					if(i+2<calphabet.length && calphabet[i+1]=='z' && calphabet[i+2]=='=') {
+						System.out.println("dz=");
+						i+=2;
+					} else if(calphabet[i+1]=='-') {
+						System.out.println("d-");
+						i++;
+					}
+				} else if(calphabet[i]=='l') {
+					if(calphabet[i+1]=='j') {
+						System.out.println("lj");
+						i++;
+					}
+				} else if(calphabet[i]=='n') {
+					if(calphabet[i+1]=='j') {
+						System.out.println("nj");
+						i++;
+					}
+				} else if(calphabet[i]=='s' || calphabet[i]=='z') {
+					if(calphabet[i+1]=='=') {
+						System.out.println("s=z=");
+						i++;
+					}
 				}
 			}
 		}
