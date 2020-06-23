@@ -11,13 +11,20 @@ public class Q001316 {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
-		int count = 0;
+		int count = n;
 		
 		for(int i = 0; i < n; i++) {
 			char[] word = br.readLine().toCharArray();
-			char[] alphabet = new char[26];
-			for(int j = 0; j < word.length; j++) {
-				
+			boolean[] alphabet = new boolean[26];
+			
+			for(int j = 1; j < word.length; j++) {
+				if(word[j-1] != word[j]) {
+					if(alphabet[word[j]-'a'] == true) {
+						count--;
+						break;
+					}
+					alphabet[word[j-1]-'a'] = true;
+				}
 			}
 		}
 		
