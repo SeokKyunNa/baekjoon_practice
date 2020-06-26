@@ -24,10 +24,11 @@ public class BubbleSort001 {
 		int[] array = {1, 10, 5, 8, 7, 6, 4, 3, 2, 9};
 		int count = 1;	// 시간 복잡도 확인용 변수
 		
-		for(i = 0; i < 10; i++) {
-			for(j = 0; j < 9-i; j++) {
+		for(i = 0; i < array.length; i++) {
+			for(j = 0; j < array.length-(i+1); j++) {
 				System.out.println(count);
 				count++;
+				
 				if(array[j] > array[j+1]) {
 					temp = array[j];
 					array[j] = array[j+1];

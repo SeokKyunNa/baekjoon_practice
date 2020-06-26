@@ -19,11 +19,12 @@ public class SelectionSort001 {
 		int[] array = {1, 10, 5, 8, 7, 6, 4, 3, 2, 9};
 		int count = 1;	// 시간 복잡도 확인용 변수
 		
-		for(i = 0; i < 10; i++) {
+		for(i = 0; i < array.length; i++) {
 			min = Integer.MAX_VALUE;
-			for(j = i; j < 10; j++) {
+			for(j = i; j < array.length; j++) {
 				System.out.println(count);
 				count++;
+				
 				if(min > array[j]) {
 					min = array[j];
 					index = j;
