@@ -24,38 +24,35 @@ public class QuickSort001 {
 		
 	}
 
-	public static void quickSort(int[] data, int start, int end) {
-		if(start >= end) {	// 원소가 1개인 경우
-			return;
-		}
-		
-		int key = start;	// 키는 첫 번째 원소
-		int i = start + 1;	// index의 왼쪽 출발 지점
-		int j = end;	// index의 오른쪽 출발 지점
-		int temp;
-		
-		while(i <= j) {	// 엇갈릴 때까지 반복
-			while(data[i] <= data[key] && i <= end) {	// 키 값보다 큰 값을 만날 때까지 
-				i++;
-			}
-			
-			while(data[j] >= data[key] && j > start) {	// 키 값보다 작은 값을 만날 때까지
-				j--;
-			}
-			
-			if(i > j) {	// 현재 엇갈린 상태면 키 값과 교체
-				temp = data[j];
-				data[j] = data[key];
-				data[key] = temp;
-			} else {
-				temp = data[j];
-				data[j] = data[i];
-				data[i] = temp;
+	public static int partition(int[] array, int low, int high) {
+
+		int pivot = array[(low + high) / 2];
+
+		while (low < high) {
+			while ((array[low] < pivot) && (low < high))
+				low++;
+			while ((array[high] > pivot) && (low < high))
+				high--;
+
+			if (low < high) {
+				int temp = array[low];
+				array[low] = array[high];
+				array[high] = temp;
 			}
 		}
-		
-		quickSort(data ,start, j-1);
-		quickSort(data, j+1, end);
+
+		return low;
+	}
+
+	public static void quickSort(int arr[], int low, int high) {
+
+		if (low < high) {
+			int pivotNewIndex = partition(arr, low, high);
+
+			quickSort(arr, low, pivotNewIndex - 1);
+			quickSort(arr, pivotNewIndex + 1, high);
+		}
+
 	}
 
 }
